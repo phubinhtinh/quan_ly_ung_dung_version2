@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Bàn phím cơ",
+      "price": "1.200.000"
+    },
+    {
+      "id": "2",
+      "name": "Máy tính bàn",
+      "price": "15.000.000"
+    },
+    {
+      "id": "7460",
+      "name": "nono",
+      "price": "12321"
+    },
+    {
+      "id": "25d1",
+      "name": "nono",
+      "price": "1231"
+    },
+    {
+      "id": "3c04",
+      "name": "híae",
+      "price": "1231"
+    },
+    {
+      "id": "6e7a",
+      "name": "1",
+      "price": "1231"
+    },
+    {
+      "id": "ba2a",
+      "name": "1",
+      "price": "1231"
+    },
+    {
+      "id": "0caf",
+      "name": "sontung",
+      "price": "111"
+    },
+    {
+      "id": "7f4e",
+      "name": "Ban Phím Một",
+      "price": "1231"
+    },
+    {
+      "id": "6efc",
+      "name": "Ban Phím Một",
+      "price": "1131231"
+    },
+    {
+      "id": "ebd3",
+      "name": "1",
+      "price": "1231"
+    },
+    {
+      "id": "3249",
+      "name": "Ban Phím Một",
+      "price": "123"
+    },
+    {
+      "id": "dbe0",
+      "name": "Ban Phím Một",
+      "price": "12321"
+    }
+  ]
+}
