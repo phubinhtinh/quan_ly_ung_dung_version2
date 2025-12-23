@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@theme {
+  /* Định nghĩa màu sắc theo cú pháp v4 */
+  /* Sau khi viết dòng này, bạn sẽ dùng được class bg-theme-primary, text-theme-primary... */
+  --color-theme-primary: #8db4c2;
+  --color-theme-dark: #739aa8;
+  --color-theme-heading: #567d8a;
+
+  /* Bạn cũng có thể thêm font chữ hoặc các thông số khác tại đây */
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}

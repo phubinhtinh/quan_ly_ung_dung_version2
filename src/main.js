@@ -50,25 +50,25 @@ function resetFormToCreateMode() {
     editingRow = null;
 }
 // localStorage
-// function addLocalStorage(){
-//     const newProduct = {
-//         id: getNextId(),
-//         name: nameInput.value,
-//         price: priceInput.value
-//     };
-//     listProductLocal.push(newProduct);
-//     localStorage.setItem('productsLocal', JSON.stringify(listProductLocal));
-// }
+function addLocalStorage(){
+    const newProduct = {
+        id: getNextId(),
+        name: nameInput.value,
+        price: priceInput.value
+    };
+    listProductLocal.push(newProduct);
+    localStorage.setItem('productsLocal', JSON.stringify(listProductLocal));
+}
 // // // sessionStorage
-// function addSessionStorage(){
-//     const newProduct = {
-//         id: getNextId(),
-//         name: nameInput.value,
-//         price: priceInput.value
-//     };
-//     listProductSession.push(newProduct);
-//     sessionStorage.setItem('productsSession', JSON.stringify(listProductSession));
-// }
+function addSessionStorage(){
+    const newProduct = {
+        id: getNextId(),
+        name: nameInput.value,
+        price: priceInput.value
+    };
+    listProductSession.push(newProduct);
+    sessionStorage.setItem('productsSession', JSON.stringify(listProductSession));
+}
 // lưu vào file Json
 function addProduct() {
     const name = nameInput.value;
@@ -122,10 +122,10 @@ form.addEventListener('submit', function (e) {
     } 
     // --- Logic THÊM MỚI ---
     else {
-        // e.preventDefault();
+        e.preventDefault();
         // Nếu không -> thêm mới
-            // addLocalStorage();
-            // addSessionStorage();
+        addLocalStorage();
+        addSessionStorage();
         addProduct();
         const id = getNextId();
         const newRow = document.createElement('tr');
