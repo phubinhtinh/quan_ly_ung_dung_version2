@@ -7,6 +7,7 @@ const submitButton = document.getElementById('submit-button');
 const cancelButton = document.getElementById('cancel-button');
 const listProductLocal = JSON.parse(localStorage.getItem('productsLocal')) || [];
 const listProductSession = JSON.parse(sessionStorage.getItem('productsSession')) || [];
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwYCsAz2SA2b4vtqUowvhLSB9e9Zu_iy3OSwLCf9qUd0DSE9OWLJo-17KSAPoJVXTrF/exec';
 // Biến để theo dõi hàng đang sửa (null = không sửa)
 let editingRow = null; 
 
@@ -97,6 +98,23 @@ function renderProducts() {
             console.log(data); 
         });
 }
+
+// Hàm gửi dữ liệu lên Google Sheets
+function addToGoogleSheets(name, price) {
+    const data = {
+        tenSanPham: name,
+        giaSanPham: price
+    };
+
+    return fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Cần thiết đối với Google Script
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(() => console.log('Đã gửi dữ liệu lên Google Sheets'))
+    .catch(err => console.error('Lỗi Google Sheets:', err));
+}   
 // --- XỬ LÝ SỰ KIỆN ---
 
 // 1. SỰ KIỆN SUBMIT FORM (THÊM MỚI hoặc CẬP NHẬT)
@@ -127,6 +145,7 @@ form.addEventListener('submit', function (e) {
         addLocalStorage();
         addSessionStorage();
         addProduct();
+        addToGoogleSheets(nameInput.value, priceInput.value)
         const id = getNextId();
         const newRow = document.createElement('tr');
         newRow.className = 'border-b border-gray-200 hover:bg-gray-50';
